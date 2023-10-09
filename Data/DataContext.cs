@@ -14,7 +14,8 @@ namespace UserApp.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
              base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS01;Database=master;User Id=UserApp;Password=12345678;Trusted_Connection=True;TrustServerCertificate=true;") ;
+            //optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS01;Database=master;User Id=UserApp;Password=12345678;Trusted_Connection=True;TrustServerCertificate=true;") ;
+            optionsBuilder.UseSqlite("Data Source=mydb.db;");
         }
 
         public DbSet<User> Users { get; set; }

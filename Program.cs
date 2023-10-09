@@ -8,17 +8,19 @@ using UserApp.Auth;
 using UserApp.Data;
 using UserApp.Services.UserService;
 
-var builder = WebApplication.CreateBuilder(args);
 
+var builder = WebApplication.CreateBuilder(args);
 try
 {
-    Log.Logger = new LoggerConfiguration()
+    #region serilog
+    var logger = new LoggerConfiguration()
                         .MinimumLevel.Debug()
                         .WriteTo.Console()
                         .WriteTo.File("logs/userapp.txt", rollingInterval: RollingInterval.Day)
                         .CreateLogger();
+    builder.Host.UseSerilog(logger);
     Log.Information("Starting UserApp");
-
+    #endregion serilog
     builder.Services.AddControllers();
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     builder.Services.AddEndpointsApiExplorer();
@@ -74,10 +76,8 @@ try
             };
         });
 
-    builder.Host.UseSerilog();
-
     var app = builder.Build();
-
+    app.UseSerilogRequestLogging();
     // Configure the HTTP request pipeline.
     //if (app.Environment.IsDevelopment())
     //{
@@ -89,8 +89,6 @@ try
     app.UseAuthentication();
     app.UseAuthorization();
     app.MapControllers();
-
-
 
     app.Run();
 }
