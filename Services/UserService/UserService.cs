@@ -1,5 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Authorization.Infrastructure;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using UserApp.Data;
+using UserApp.Dto;
+using UserApp.Models;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace UserApp.Services.UserService
 {
@@ -15,7 +20,23 @@ namespace UserApp.Services.UserService
         {
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
-            return await _context.Users.ToListAsync();
+            return await _context.Users.Include(c => c.Roles).ToListAsync();
+        }
+
+        public async Task<User>? AddRole(int UserId, int RoleId)
+        {
+            var user = await _context.Users.FindAsync(UserId);
+            if (user == null)
+                return null;
+
+            var role = await _context.Roles.FindAsync(RoleId);
+            if (role == null)
+                return null;
+
+            user.Roles.Add(role);
+            await _context.SaveChangesAsync();
+
+            return _context.Users.Include(c => c.Roles).FirstOrDefault(c=>c.Id == UserId);
         }
 
         public async Task<List<User>?> DeleteUser(int id)
@@ -30,15 +51,48 @@ namespace UserApp.Services.UserService
             return await _context.Users.ToListAsync();
         }
 
-        public async Task<List<User>> GetAllUsers()
+        public async Task<List<User>> GetAllUsers(string? searchString = null, string? sortOrder = null, int page = 1)
         {
-            var users = await _context.Users.ToListAsync();
-            return users;
+            IQueryable<User> result = _context.Users
+                .Include(t => t.Roles);
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                 result = result
+                    .Where(u => u.Name.Contains(searchString) ||
+                        u.Email.Contains(searchString) ||
+                        u.Roles.Any(c => c.Name.Contains(searchString)));
+
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    result = result.OrderByDescending(s => s.Name);
+                    break;
+                case "age":
+                    result = result.OrderBy(s => s.Age);
+                    break;
+                case "email_desc":
+                    result = result.OrderByDescending(s => s.Email); ;
+                    break;
+                default:
+                    result = result.OrderBy(s => s.Name).Include(c => c.Roles.OrderBy(f => f.Name));
+                    break;
+            }
+
+            var pageResults = 3f;
+            var pageCount = Math.Ceiling(result.Count() / pageResults);
+
+            result = result.Skip((page - 1) * (int)pageResults)
+                .Take((int)pageResults);
+
+            return await result.ToListAsync(); ;
         }
 
         public async Task<User> GetUser(int id)
         {
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Users.Include(c => c.Roles).FirstOrDefaultAsync(c => c.Id == id);
             if (user == null)
                 return null;
 
@@ -58,6 +112,21 @@ namespace UserApp.Services.UserService
             await _context.SaveChangesAsync();
 
             return await _context.Users.ToListAsync();
+        }
+
+        public class UniqEmailAttribute : ValidationAttribute
+        {
+            protected override ValidationResult IsValid(object value,
+                ValidationContext validationContext)
+            {
+                var context = validationContext.GetService(typeof(DataContext)) as DataContext;
+                if (!context.Users.Any(a => a.Email == value.ToString()))
+                {
+                    return ValidationResult.Success;
+                }
+
+                return new ValidationResult($"This Email already exists");
+            }
         }
     }
 }

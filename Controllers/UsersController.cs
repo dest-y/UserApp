@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using UserApp.Services.UserService;
 
 namespace UserApp.Controllers
@@ -13,12 +12,13 @@ namespace UserApp.Controllers
         {
             _userService = userService;
         }
-        
+
 
         [HttpGet]
-        public async Task<ActionResult<List<User>>> GetAllUsers()
+        [Route("/Page/{page}")]
+        public async Task<ActionResult<List<User>>> GetAllUsers(string? searchString = null, string? sortOrder = null, int page = 1)
         {
-            var result = await _userService.GetAllUsers();
+            var result = await _userService.GetAllUsers(searchString, sortOrder, page);
 
             return Ok(result);
         }
@@ -27,8 +27,9 @@ namespace UserApp.Controllers
         [Route("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
-
             var result = await _userService.GetUser(id);
+            if (result == null)
+                return NotFound("User not found");
 
             return Ok(result);
         }
@@ -41,12 +42,24 @@ namespace UserApp.Controllers
             return Ok(result);
         }
 
+        [HttpPost]
+        [Route("Roles/{UserId}/{RoleId}")]
+        public async Task<ActionResult<List<Role>>> AddRole(int UserId, int RoleId)
+        {
+            var result = await _userService.AddRole(UserId, RoleId);
+            if (result == null)
+                return NotFound("User or Role not found");
+
+            return Ok(result);
+        }
+
         [HttpPut]
         [Route("{id}")]
         public async Task<ActionResult<List<User>>> UpdateUser(int id, User request)
         {
-
             var result = await _userService.UpdateUser(id, request);
+            if (result == null)
+                return NotFound("User not found");
 
             return Ok(result);
         }
@@ -55,7 +68,6 @@ namespace UserApp.Controllers
         [Route("{id}")]
         public async Task<ActionResult<List<User>>> DeleteUser(int id)
         {
-
             var result = await _userService.DeleteUser(id);
             if (result == null)
                 return NotFound("User not found");
