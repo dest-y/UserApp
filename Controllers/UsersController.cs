@@ -15,10 +15,9 @@ namespace UserApp.Controllers
         private readonly IUserService _userService;
         private readonly ILogger<UsersController> _logger;
 
-        public UsersController(IUserService userService, ILogger<UsersController> logger)
+        public UsersController(IUserService userService)
         {
             _userService = userService;
-            _logger = logger;
         }
 
         /// <summary>
@@ -39,7 +38,6 @@ namespace UserApp.Controllers
         {
             var routeInfo = ControllerContext.RouteData.Values.ToString();
             var result = await _userService.GetAllUsers(searchString, sortOrder, page);
-            Log.Information($"GetAllUsers '{searchString}', '{sortOrder}', result = '{JsonSerializer.Serialize(result)}'");
             return Ok(result);
         }
 
