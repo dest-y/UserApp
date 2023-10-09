@@ -10,6 +10,13 @@ namespace UserApp.Controllers
     [Route("api/[controller]")]
     public class AuthController : Controller
     {
+        /// <summary>
+        /// Авторизация пользователя
+        /// </summary>
+        /// <remarks><br>Авторизация доступна только для mock-пользователя 'AuthUser'</br>
+        /// </remarks>
+        /// <response code="200">OK</response>
+        /// <response code="401">Неверный пользователь</response>
         [HttpGet]
         [Route("/login")]
         public async Task<IActionResult> Index(string username)

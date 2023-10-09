@@ -21,6 +21,18 @@ namespace UserApp.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// Получение списка всех пользователей и их ролей.
+        /// </summary>
+        /// <remarks><br>Реализован поиск по имени пользователя, Email и названии роли пользователя.</br>
+        /// <br>Доступна фильтрацция:</br>
+        /// <br>name_desc - по имени пользователя(DESC)</br>
+        /// <br>age - по возрасту(ASC)</br>
+        /// <br>email_desc - по Email(DESC)</br>
+        /// <br>DEFAULT - по Имени пользователя(ASC) => по названию роли(ASC)</br> 
+        /// <br>Пагинация - 5 пользователей в 1 запросе, страница по умолчанию 1</br> 
+        /// </remarks>
+        /// <response code="200">OK</response>
         [HttpGet]
         [Route("/Page/{page}")]
         public async Task<ActionResult<List<User>>> GetAllUsers(string? searchString = null, string? sortOrder = null, int page = 1)
@@ -31,6 +43,11 @@ namespace UserApp.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Получение пользователя и всех его ролей по ID пользователя.
+        /// </summary>
+        /// <response code="200">OK</response>
+        /// <response code="404">Пользователь не найден</response>
         [HttpGet]
         [Route("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
@@ -41,7 +58,11 @@ namespace UserApp.Controllers
 
             return Ok(result);
         }
-
+        /// <summary>
+        /// Добавление нового пользователя, требуется авторизация.
+        /// </summary>
+        /// <response code="200">OK</response>
+        /// <response code="401">Требуется авторизация</response>
         [HttpPost]
         [Authorize]
         public async Task<ActionResult<List<User>>> AddUser(User user)
@@ -51,6 +72,12 @@ namespace UserApp.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Добавление роли существующему пользователю, требуется авторизация.
+        /// </summary>
+        /// <response code="200">OK</response>
+        /// <response code="401">Требуется авторизация</response>
+        /// <response code="404">Пользователь или роль не найден</response>
         [HttpPost]
         [Route("Roles/{UserId}/{RoleId}")]
         [Authorize]
@@ -62,7 +89,12 @@ namespace UserApp.Controllers
 
             return Ok(result);
         }
-
+        /// <summary>
+        /// Изменение данных для уже существующего пользователя, требуется авторизация.
+        /// </summary>
+        /// <response code="200">OK</response>
+        /// <response code="401">Требуется авторизация</response>
+        /// <response code="404">Пользователь не найден</response>
         [HttpPut]
         [Route("{id}")]
         [Authorize]
@@ -74,7 +106,12 @@ namespace UserApp.Controllers
 
             return Ok(result);
         }
-
+        /// <summary>
+        /// Удаление пользователя, требуется авторизация.
+        /// </summary>
+        /// <response code="200">OK</response>
+        /// <response code="401">Требуется авторизация</response>
+        /// <response code="404">Пользователь не найден</response>
         [HttpDelete]
         [Route("{id}")]
         [Authorize]
