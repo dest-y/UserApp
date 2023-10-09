@@ -1,0 +1,268 @@
+2023-10-09 14:02:32.018 +03:00 [INF] GetAllUsers '', '', '1'
+2023-10-09 14:04:01.239 +03:00 [INF] GetAllUsers '', '', '1'
+2023-10-09 14:05:09.601 +03:00 [INF] GetAllUsers '', 'age', '1'
+2023-10-09 14:06:30.074 +03:00 [INF] GetAllUsers '', '', '1'
+2023-10-09 14:11:13.120 +03:00 [INF] GetAllUsers '', '', '1' System.Collections.Generic.List`1[UserApp.Models.User]
+2023-10-09 14:17:19.177 +03:00 [INF] GetAllUsers '', '', 'Microsoft.AspNetCore.Routing.RouteData'
+2023-10-09 14:18:01.339 +03:00 [INF] GetAllUsers '', '', 'Microsoft.AspNetCore.Routing.RouteValueDictionary'
+2023-10-09 14:20:25.107 +03:00 [INF] GetAllUsers '', '', '[{"Id":5,"Name":"string!!!","Email":"1user@example.com","Age":150,"Roles":[]},{"Id":2,"Name":"string5","Email":"use5r@example.com","Age":12,"Roles":[{"Id":2,"Name":"Admin"},{"Id":3,"Name":"SuperAdmin"},{"Id":1,"Name":"User"}]},{"Id":1,"Name":"user1","Email":"user@example.com","Age":150,"Roles":[{"Id":2,"Name":"Admin"},{"Id":3,"Name":"SuperAdmin"},{"Id":1,"Name":"User"}]}]'
+2023-10-09 14:26:07.524 +03:00 [INF] GetAllUsers '', '', result = '[{"Id":5,"Name":"string!!!","Email":"1user@example.com","Age":150,"Roles":[]},{"Id":2,"Name":"string5","Email":"use5r@example.com","Age":12,"Roles":[{"Id":2,"Name":"Admin"},{"Id":3,"Name":"SuperAdmin"},{"Id":1,"Name":"User"}]},{"Id":1,"Name":"user1","Email":"user@example.com","Age":150,"Roles":[{"Id":2,"Name":"Admin"},{"Id":3,"Name":"SuperAdmin"},{"Id":1,"Name":"User"}]}]'
+2023-10-09 14:32:44.282 +03:00 [INF] Starting UserApp
+2023-10-09 14:32:44.446 +03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-10-09 14:32:44.492 +03:00 [DBG] Hosting starting
+2023-10-09 14:32:44.601 +03:00 [INF] Now listening on: https://localhost:7022
+2023-10-09 14:32:44.601 +03:00 [INF] Now listening on: http://localhost:5250
+2023-10-09 14:32:44.602 +03:00 [DBG] Loaded hosting startup assembly UserApp
+2023-10-09 14:32:44.603 +03:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-10-09 14:32:44.603 +03:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-10-09 14:32:44.604 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-09 14:32:44.604 +03:00 [INF] Hosting environment: Development
+2023-10-09 14:32:44.605 +03:00 [INF] Content root path: C:\Users\De_st\source\repos\UserApp
+2023-10-09 14:32:44.605 +03:00 [DBG] Hosting started
+2023-10-09 14:32:44.946 +03:00 [DBG] Connection id "0HMU8NDQF2C9H" accepted.
+2023-10-09 14:32:44.946 +03:00 [DBG] Connection id "0HMU8NDQF2C9G" accepted.
+2023-10-09 14:32:44.947 +03:00 [DBG] Connection id "0HMU8NDQF2C9H" started.
+2023-10-09 14:32:44.948 +03:00 [DBG] Connection id "0HMU8NDQF2C9G" started.
+2023-10-09 14:32:44.952 +03:00 [DBG] Connection id "0HMU8NDQF2C9G" received FIN.
+2023-10-09 14:32:44.952 +03:00 [DBG] Connection id "0HMU8NDQF2C9H" received FIN.
+2023-10-09 14:32:44.961 +03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-10-09 14:32:44.961 +03:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-10-09 14:32:44.980 +03:00 [DBG] Connection id "0HMU8NDQF2C9H" stopped.
+2023-10-09 14:32:44.980 +03:00 [DBG] Connection id "0HMU8NDQF2C9G" stopped.
+2023-10-09 14:32:44.983 +03:00 [DBG] Connection id "0HMU8NDQF2C9H" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-10-09 14:32:44.983 +03:00 [DBG] Connection id "0HMU8NDQF2C9G" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-10-09 14:32:45.425 +03:00 [DBG] Connection id "0HMU8NDQF2C9I" accepted.
+2023-10-09 14:32:45.426 +03:00 [DBG] Connection id "0HMU8NDQF2C9I" started.
+2023-10-09 14:32:45.455 +03:00 [DBG] Connection 0HMU8NDQF2C9I established using the following protocol: "Tls13"
+2023-10-09 14:32:45.515 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7022/swagger/index.html - -
+2023-10-09 14:32:45.539 +03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-10-09 14:32:45.560 +03:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2023-10-09 14:32:45.561 +03:00 [DBG] Request did not match any endpoints
+2023-10-09 14:32:45.674 +03:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2023-10-09 14:32:45.688 +03:00 [DBG] Response markup was updated to include browser refresh script injection.
+2023-10-09 14:32:45.690 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7022/swagger/index.html - - - 200 - text/html;charset=utf-8 178.8594ms
+2023-10-09 14:32:45.714 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7022/swagger/swagger-ui.css - -
+2023-10-09 14:32:45.714 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7022/_framework/aspnetcore-browser-refresh.js - -
+2023-10-09 14:32:45.715 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7022/_vs/browserLink - -
+2023-10-09 14:32:45.716 +03:00 [DBG] No candidates found for the request path '/swagger/swagger-ui.css'
+2023-10-09 14:32:45.717 +03:00 [DBG] Request did not match any endpoints
+2023-10-09 14:32:45.729 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7022/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 14.5442ms
+2023-10-09 14:32:45.741 +03:00 [DBG] The file transmission was cancelled
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at Microsoft.AspNetCore.Http.SendFileResponseExtensions.SendFileAsyncCore(HttpResponse response, IFileInfo file, Int64 offset, Nullable`1 count, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.SendFileResponseExtensions.SendFileAsyncCore(HttpResponse response, IFileInfo file, Int64 offset, Nullable`1 count, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileContext.SendAsync()
+2023-10-09 14:32:45.745 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-10-09 14:32:45.747 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7022/swagger/swagger-ui.css - - - 0 143943 text/css 32.5405ms
+2023-10-09 14:32:45.756 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7022/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 41.0550ms
+2023-10-09 14:32:45.776 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7022/swagger/favicon-16x16.png - -
+2023-10-09 14:32:45.776 +03:00 [DBG] No candidates found for the request path '/swagger/favicon-16x16.png'
+2023-10-09 14:32:45.777 +03:00 [DBG] Request did not match any endpoints
+2023-10-09 14:32:45.779 +03:00 [DBG] The file transmission was cancelled
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at Microsoft.AspNetCore.Http.SendFileResponseExtensions.SendFileAsyncCore(HttpResponse response, IFileInfo file, Int64 offset, Nullable`1 count, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.SendFileResponseExtensions.SendFileAsyncCore(HttpResponse response, IFileInfo file, Int64 offset, Nullable`1 count, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileContext.SendAsync()
+2023-10-09 14:32:45.780 +03:00 [INF] Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+2023-10-09 14:32:45.781 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7022/swagger/favicon-16x16.png - - - 0 665 image/png 5.0076ms
+2023-10-09 14:32:45.832 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7022/swagger/v1/swagger.json - -
+2023-10-09 14:32:45.833 +03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2023-10-09 14:32:45.834 +03:00 [DBG] Request did not match any endpoints
+2023-10-09 14:32:45.942 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7022/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 109.8386ms
+2023-10-09 14:32:52.317 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7022/Page/1 - -
+2023-10-09 14:32:52.319 +03:00 [DBG] 1 candidate(s) found for the request path '/Page/1'
+2023-10-09 14:32:52.322 +03:00 [DBG] Endpoint 'UserApp.Controllers.UsersController.GetAllUsers (UserApp)' with route pattern 'Page/{page}' is valid for the request path '/Page/1'
+2023-10-09 14:32:52.323 +03:00 [DBG] Request matched endpoint 'UserApp.Controllers.UsersController.GetAllUsers (UserApp)'
+2023-10-09 14:32:52.323 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-10-09 14:32:52.325 +03:00 [INF] Executing endpoint 'UserApp.Controllers.UsersController.GetAllUsers (UserApp)'
+2023-10-09 14:32:52.344 +03:00 [INF] Route matched with {action = "GetAllUsers", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[UserApp.Models.User]]] GetAllUsers(System.String, System.String, Int32) on controller UserApp.Controllers.UsersController (UserApp).
+2023-10-09 14:32:52.345 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-10-09 14:32:52.347 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-10-09 14:32:52.348 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-10-09 14:32:52.348 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-10-09 14:32:52.349 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-10-09 14:32:52.350 +03:00 [DBG] Executing controller factory for controller UserApp.Controllers.UsersController (UserApp)
+2023-10-09 14:32:52.414 +03:00 [DBG] Executed controller factory for controller UserApp.Controllers.UsersController (UserApp)
+2023-10-09 14:32:52.423 +03:00 [DBG] Attempting to bind parameter 'searchString' of type 'System.String' ...
+2023-10-09 14:32:52.425 +03:00 [DBG] Attempting to bind parameter 'searchString' of type 'System.String' using the name '' in request data ...
+2023-10-09 14:32:52.426 +03:00 [DBG] Could not find a value in the request with name '' for binding parameter 'searchString' of type 'System.String'.
+2023-10-09 14:32:52.427 +03:00 [DBG] Done attempting to bind parameter 'searchString' of type 'System.String'.
+2023-10-09 14:32:52.427 +03:00 [DBG] Done attempting to bind parameter 'searchString' of type 'System.String'.
+2023-10-09 14:32:52.428 +03:00 [DBG] Attempting to validate the bound parameter 'searchString' of type 'System.String' ...
+2023-10-09 14:32:52.429 +03:00 [DBG] Done attempting to validate the bound parameter 'searchString' of type 'System.String'.
+2023-10-09 14:32:52.431 +03:00 [DBG] Attempting to bind parameter 'sortOrder' of type 'System.String' ...
+2023-10-09 14:32:52.431 +03:00 [DBG] Attempting to bind parameter 'sortOrder' of type 'System.String' using the name '' in request data ...
+2023-10-09 14:32:52.432 +03:00 [DBG] Could not find a value in the request with name '' for binding parameter 'sortOrder' of type 'System.String'.
+2023-10-09 14:32:52.432 +03:00 [DBG] Done attempting to bind parameter 'sortOrder' of type 'System.String'.
+2023-10-09 14:32:52.433 +03:00 [DBG] Done attempting to bind parameter 'sortOrder' of type 'System.String'.
+2023-10-09 14:32:52.433 +03:00 [DBG] Attempting to validate the bound parameter 'sortOrder' of type 'System.String' ...
+2023-10-09 14:32:52.434 +03:00 [DBG] Done attempting to validate the bound parameter 'sortOrder' of type 'System.String'.
+2023-10-09 14:32:52.435 +03:00 [DBG] Attempting to bind parameter 'page' of type 'System.Int32' ...
+2023-10-09 14:32:52.436 +03:00 [DBG] Attempting to bind parameter 'page' of type 'System.Int32' using the name 'page' in request data ...
+2023-10-09 14:32:52.436 +03:00 [DBG] Done attempting to bind parameter 'page' of type 'System.Int32'.
+2023-10-09 14:32:52.437 +03:00 [DBG] Done attempting to bind parameter 'page' of type 'System.Int32'.
+2023-10-09 14:32:52.437 +03:00 [DBG] Attempting to validate the bound parameter 'page' of type 'System.Int32' ...
+2023-10-09 14:32:52.439 +03:00 [DBG] Done attempting to validate the bound parameter 'page' of type 'System.Int32'.
+2023-10-09 14:32:52.480 +03:00 [DBG] An additional 'IServiceProvider' was created for internal use by Entity Framework. An existing service provider was not used due to the following configuration changes: configuration changed for 'Core:ConfigureWarnings', configuration added for 'SqlServer'.
+2023-10-09 14:32:52.675 +03:00 [DBG] The index {'RolesId'} was not created on entity type 'RoleUser (Dictionary<string, object>)' as the properties are already covered by the index {'RolesId', 'UsersId'}.
+2023-10-09 14:32:52.726 +03:00 [DBG] The property 'RoleUser (Dictionary<string, object>).RolesId' was created in shadow state because there are no eligible CLR members with a matching name.
+2023-10-09 14:32:52.727 +03:00 [DBG] The property 'RoleUser (Dictionary<string, object>).UsersId' was created in shadow state because there are no eligible CLR members with a matching name.
+2023-10-09 14:32:52.816 +03:00 [DBG] Entity Framework Core 7.0.11 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.11' with options: None
+2023-10-09 14:32:52.852 +03:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .Include(t => t.Roles)
+    .OrderBy(s => s.Name)
+    .Include(c => c.Roles
+        .OrderBy(f => f.Name))
+    .Count()'
+2023-10-09 14:32:52.956 +03:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<int>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT COUNT(*)
+        FROM Users AS u), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, int>, 
+    UserApp.Data.DataContext, 
+    False, 
+    False, 
+    True
+)
+    .Single()'
+2023-10-09 14:32:52.975 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-10-09 14:32:52.977 +03:00 [DBG] Creating DbConnection.
+2023-10-09 14:32:52.990 +03:00 [DBG] Created DbConnection. (11ms).
+2023-10-09 14:32:52.996 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (19ms).
+2023-10-09 14:32:52.998 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (23ms).
+2023-10-09 14:32:53.000 +03:00 [DBG] Opening connection to database 'master' on server 'localhost\SQLEXPRESS01'.
+2023-10-09 14:32:53.153 +03:00 [DBG] Opened connection to database 'master' on server 'localhost\SQLEXPRESS01'.
+2023-10-09 14:32:53.158 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2023-10-09 14:32:53.175 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2023-10-09 14:32:53.182 +03:00 [DBG] Closing data reader to 'master' on server 'localhost\SQLEXPRESS01'.
+2023-10-09 14:32:53.187 +03:00 [DBG] A data reader for 'master' on server 'localhost\SQLEXPRESS01' is being disposed after spending 7ms reading results.
+2023-10-09 14:32:53.189 +03:00 [DBG] Closing connection to database 'master' on server 'localhost\SQLEXPRESS01'.
+2023-10-09 14:32:53.193 +03:00 [DBG] Closed connection to database 'master' on server 'localhost\SQLEXPRESS01' (4ms).
+2023-10-09 14:32:53.199 +03:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .Include(t => t.Roles)
+    .OrderBy(s => s.Name)
+    .Include(c => c.Roles
+        .OrderBy(f => f.Name))
+    .Skip(__p_0)
+    .Take(__p_1)'
+2023-10-09 14:32:53.207 +03:00 [DBG] Including navigation: 'User.Roles'.
+2023-10-09 14:32:53.279 +03:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<User>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Client Projections:
+            0 -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.Age (int) Required, 1], [Property: User.Email (string) Required, 2], [Property: User.Name (string) Required, 3] }
+            1 -> 0
+            2 -> Dictionary<IProperty, int> { [Property: RoleUser (Dictionary<string, object>).RolesId (no field, int) Indexer Required PK FK AfterSave:Throw, 4], [Property: RoleUser (Dictionary<string, object>).UsersId (no field, int) Indexer Required PK FK Index AfterSave:Throw, 5] }
+            3 -> Dictionary<IProperty, int> { [Property: Role.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 6], [Property: Role.Name (string) Required, 7] }
+            4 -> 4
+            5 -> 5
+            6 -> 6
+        SELECT t.Id, t.Age, t.Email, t.Name, t0.RolesId, t0.UsersId, t0.Id, t0.Name
+        FROM 
+        (
+            SELECT u.Id, u.Age, u.Email, u.Name
+            FROM Users AS u
+            ORDER BY u.Name ASC
+            OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+        ) AS t
+        LEFT JOIN 
+        (
+            SELECT r.RolesId, r.UsersId, r0.Id, r0.Name
+            FROM RoleUser AS r
+            INNER JOIN Roles AS r0 ON r.RolesId == r0.Id
+        ) AS t0 ON t.Id == t0.UsersId
+        ORDER BY t.Name ASC, t.Id ASC, t0.Name ASC, t0.RolesId ASC, t0.UsersId ASC), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+    UserApp.Data.DataContext, 
+    False, 
+    False, 
+    True
+)'
+2023-10-09 14:32:53.290 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-10-09 14:32:53.291 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2023-10-09 14:32:53.294 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+2023-10-09 14:32:53.297 +03:00 [DBG] Opening connection to database 'master' on server 'localhost\SQLEXPRESS01'.
+2023-10-09 14:32:53.299 +03:00 [DBG] Opened connection to database 'master' on server 'localhost\SQLEXPRESS01'.
+2023-10-09 14:32:53.302 +03:00 [DBG] Executing DbCommand [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Age], [t].[Email], [t].[Name], [t0].[RolesId], [t0].[UsersId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [u].[Id], [u].[Age], [u].[Email], [u].[Name]
+    FROM [Users] AS [u]
+    ORDER BY [u].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[RolesId], [r].[UsersId], [r0].[Id], [r0].[Name]
+    FROM [RoleUser] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RolesId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsersId]
+ORDER BY [t].[Name], [t].[Id], [t0].[Name], [t0].[RolesId], [t0].[UsersId]
+2023-10-09 14:32:53.327 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Age], [t].[Email], [t].[Name], [t0].[RolesId], [t0].[UsersId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [u].[Id], [u].[Age], [u].[Email], [u].[Name]
+    FROM [Users] AS [u]
+    ORDER BY [u].[Name]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[RolesId], [r].[UsersId], [r0].[Id], [r0].[Name]
+    FROM [RoleUser] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RolesId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UsersId]
+ORDER BY [t].[Name], [t].[Id], [t0].[Name], [t0].[RolesId], [t0].[UsersId]
+2023-10-09 14:32:53.354 +03:00 [DBG] Context 'DataContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-10-09 14:32:53.368 +03:00 [DBG] Context 'DataContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-10-09 14:32:53.379 +03:00 [DBG] Context 'DataContext' started tracking 'RoleUser' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-10-09 14:32:53.388 +03:00 [DBG] Context 'DataContext' started tracking 'Role' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-10-09 14:32:53.391 +03:00 [DBG] Context 'DataContext' started tracking 'RoleUser' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-10-09 14:32:53.392 +03:00 [DBG] Context 'DataContext' started tracking 'Role' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-10-09 14:32:53.392 +03:00 [DBG] Context 'DataContext' started tracking 'RoleUser' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-10-09 14:32:53.393 +03:00 [DBG] Context 'DataContext' started tracking 'Role' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-10-09 14:32:53.394 +03:00 [DBG] Context 'DataContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-10-09 14:32:53.394 +03:00 [DBG] Context 'DataContext' started tracking 'RoleUser' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-10-09 14:32:53.395 +03:00 [DBG] Context 'DataContext' started tracking 'RoleUser' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-10-09 14:32:53.395 +03:00 [DBG] Context 'DataContext' started tracking 'RoleUser' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-10-09 14:32:53.398 +03:00 [DBG] Closing data reader to 'master' on server 'localhost\SQLEXPRESS01'.
+2023-10-09 14:32:53.399 +03:00 [DBG] A data reader for 'master' on server 'localhost\SQLEXPRESS01' is being disposed after spending 70ms reading results.
+2023-10-09 14:32:53.401 +03:00 [DBG] Closing connection to database 'master' on server 'localhost\SQLEXPRESS01'.
+2023-10-09 14:32:53.402 +03:00 [DBG] Closed connection to database 'master' on server 'localhost\SQLEXPRESS01' (1ms).
+2023-10-09 14:32:53.408 +03:00 [INF] GetAllUsers '', '', result = '[{"Id":5,"Name":"string!!!","Email":"1user@example.com","Age":150,"Roles":[]},{"Id":2,"Name":"string5","Email":"use5r@example.com","Age":12,"Roles":[{"Id":2,"Name":"Admin"},{"Id":3,"Name":"SuperAdmin"},{"Id":1,"Name":"User"}]},{"Id":1,"Name":"user1","Email":"user@example.com","Age":150,"Roles":[{"Id":2,"Name":"Admin"},{"Id":3,"Name":"SuperAdmin"},{"Id":1,"Name":"User"}]}]'
+2023-10-09 14:32:53.414 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-10-09 14:32:53.418 +03:00 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2023-10-09 14:32:53.419 +03:00 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2023-10-09 14:32:53.420 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-10-09 14:32:53.421 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-10-09 14:32:53.422 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-10-09 14:32:53.422 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[UserApp.Models.User, UserApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-09 14:32:53.428 +03:00 [INF] Executed action UserApp.Controllers.UsersController.GetAllUsers (UserApp) in 1076.1537ms
+2023-10-09 14:32:53.429 +03:00 [INF] Executed endpoint 'UserApp.Controllers.UsersController.GetAllUsers (UserApp)'
+2023-10-09 14:32:53.431 +03:00 [DBG] 'DataContext' disposed.
+2023-10-09 14:32:53.434 +03:00 [DBG] Disposing connection to database 'master' on server 'localhost\SQLEXPRESS01'.
+2023-10-09 14:32:53.435 +03:00 [DBG] Disposed connection to database '' on server '' (1ms).
+2023-10-09 14:32:53.436 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7022/Page/1 - - - 200 - application/json;+charset=utf-8 1119.7309ms

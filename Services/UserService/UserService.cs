@@ -87,7 +87,7 @@ namespace UserApp.Services.UserService
             result = result.Skip((page - 1) * (int)pageResults)
                 .Take((int)pageResults);
 
-            return await result.ToListAsync(); ;
+            return await result.ToListAsync();
         }
 
         public async Task<User> GetUser(int id)

@@ -1,4 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using Serilog;
+using System.Text.Json;
+using UserApp.Models;
 using UserApp.Services.UserService;
 
 namespace UserApp.Controllers
@@ -8,9 +12,12 @@ namespace UserApp.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
-        public UsersController(IUserService userService)
+        private readonly ILogger<UsersController> _logger;
+
+        public UsersController(IUserService userService, ILogger<UsersController> logger)
         {
             _userService = userService;
+            _logger = logger;
         }
 
 
@@ -18,8 +25,9 @@ namespace UserApp.Controllers
         [Route("/Page/{page}")]
         public async Task<ActionResult<List<User>>> GetAllUsers(string? searchString = null, string? sortOrder = null, int page = 1)
         {
+            var routeInfo = ControllerContext.RouteData.Values.ToString();
             var result = await _userService.GetAllUsers(searchString, sortOrder, page);
-
+            Log.Information($"GetAllUsers '{searchString}', '{sortOrder}', result = '{JsonSerializer.Serialize(result)}'");
             return Ok(result);
         }
 
