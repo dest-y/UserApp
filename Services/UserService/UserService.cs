@@ -1,10 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization.Infrastructure;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using UserApp.Data;
-using UserApp.Dto;
-using UserApp.Models;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace UserApp.Services.UserService
 {
@@ -36,7 +32,7 @@ namespace UserApp.Services.UserService
             user.Roles.Add(role);
             await _context.SaveChangesAsync();
 
-            return _context.Users.Include(c => c.Roles).FirstOrDefault(c=>c.Id == UserId);
+            return _context.Users.Include(c => c.Roles).FirstOrDefault(c => c.Id == UserId);
         }
 
         public async Task<List<User>?> DeleteUser(int id)
@@ -58,11 +54,10 @@ namespace UserApp.Services.UserService
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                 result = result
-                    .Where(u => u.Name.Contains(searchString) ||
-                        u.Email.Contains(searchString) ||
-                        u.Roles.Any(c => c.Name.Contains(searchString)));
-
+                result = result
+                   .Where(u => u.Name.Contains(searchString) ||
+                       u.Email.Contains(searchString) ||
+                       u.Roles.Any(c => c.Name.Contains(searchString)));
             }
 
             switch (sortOrder)
@@ -81,7 +76,7 @@ namespace UserApp.Services.UserService
                     break;
             }
 
-            var pageResults = 3f;
+            var pageResults = 5f;
             var pageCount = Math.Ceiling(result.Count() / pageResults);
 
             result = result.Skip((page - 1) * (int)pageResults)

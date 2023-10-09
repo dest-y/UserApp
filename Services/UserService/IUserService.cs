@@ -1,5 +1,4 @@
-﻿using UserApp.Dto;
-
+﻿
 namespace UserApp.Services.UserService
 {
     public interface IUserService
