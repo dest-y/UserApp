@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using UserApp.Services.UserService;
 
 namespace UserApp.Controllers
@@ -35,6 +36,7 @@ namespace UserApp.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<List<User>>> AddUser(User user)
         {
             var result = await _userService.AddUser(user);
@@ -44,6 +46,7 @@ namespace UserApp.Controllers
 
         [HttpPost]
         [Route("Roles/{UserId}/{RoleId}")]
+        [Authorize]
         public async Task<ActionResult<List<Role>>> AddRole(int UserId, int RoleId)
         {
             var result = await _userService.AddRole(UserId, RoleId);
@@ -55,6 +58,7 @@ namespace UserApp.Controllers
 
         [HttpPut]
         [Route("{id}")]
+        [Authorize]
         public async Task<ActionResult<List<User>>> UpdateUser(int id, User request)
         {
             var result = await _userService.UpdateUser(id, request);
@@ -66,6 +70,7 @@ namespace UserApp.Controllers
 
         [HttpDelete]
         [Route("{id}")]
+        [Authorize]
         public async Task<ActionResult<List<User>>> DeleteUser(int id)
         {
             var result = await _userService.DeleteUser(id);
